@@ -1,0 +1,75 @@
+Category,Item,Value,Notes/Acceptance Criteria
+Project Info,Campaign Name,Merach CES Pre-Launch EDM → FB Group,"Internal name for vendor; keep consistent in subject lines, file names, and tracking"
+Project Info,Primary Goal,Drive traffic to Merach Facebook Group,"Single conversion goal: click to join/view group"
+Project Info,Primary Destination URL,https://www.facebook.com/groups/merachfitness,"Use this as the ONLY CTA link (button + text links) to avoid split traffic"
+Project Info,Secondary Goals,Increase engagement with CES pre-launch story,"Optional: clicks + reads; do not add extra outbound links unless approved"
+Project Info,Send Market/Language,TBD,"Client to confirm: EN only or bilingual; region EU/US/Global"
+Project Info,Send Date/Time,TBD,"Client to confirm"
+
+Audience,Audience Definition,Existing DTC site subscribers/customers,"Broad list; no special targeting unless client provides segments"
+Audience,Segmentation,Default: all eligible recipients,"Optional: split by language/region if list supports it"
+
+Key Message,Brand Proof,Serving over 10 million households worldwide,"Must match PR claim; avoid adding new claims"
+Key Message,Event Hook,Merach returning to CES in Las Vegas,"Pre-launch debut of 4 new products"
+Key Message,Product 1 Summary,Merach UltraTread T60 Aura,"Teaser only: KneeGuard™ joint-friendly running feel + conversational AI coach"
+Key Message,Product 2 Summary,Merach UltraWalk W60 Plus,"Teaser only: treadmill-level walking pad experience"
+Key Message,Product 3 Summary,Merach UltraElliptical E60,"Teaser only: adjustable stride (42–50cm) + stable home workout"
+Key Message,Product 4 Summary,Merach NovaBike S50,"Teaser only: large screen interactive ride experience (as available)"
+Key Message,Consumer Benefit,High-end experience at an affordable price + injury-mitigating design,"Keep language consumer-friendly; avoid medical claims"
+
+Tone & Style,Tone,Confident + inviting + community-driven,"Avoid over-hype; clarity first"
+Tone & Style,Brand Voice,Innovative home fitness / helpful coach,"Short sentences; benefit-led"
+
+Email Structure,Overall Layout,Hero → benefits bullets → 4 product teaser cards → community value → strong CTA → footer,"Keep primary CTA visible in first screen; repeat CTA near end"
+Email Structure,Hero Module,H1 + subhead + hero image,"H1: CES pre-launch; Subhead: joint protection + conversational AI; add brand proof line"
+Email Structure,Benefits Module,4 bullets: safer / smarter / premium but affordable / treadmill-level standards,"Bullets should be scannable; 1 line each"
+Email Structure,Product Teasers,4 cards (2x2 grid on desktop; stacked on mobile),"Each card: product name + 1–2 bullets; no pricing/specs"
+Email Structure,Community Value,4 bullets: CES updates / training + accountability / perks (if any) / real users,"If no perks, remove that bullet"
+Email Structure,Primary CTA Button,Join the Merach Fitness Facebook Group,"Button links to destination URL"
+Email Structure,Secondary CTA Text,See what the community is sharing / Get CES updates,"Also links to same destination URL"
+Email Structure,Footer,Company info + unsubscribe + privacy policy,"Use platform default modules"
+
+Copy Deliverables,Subject Lines (A/B),A1: CES新品抢先看：加入 Merach Fitness 社群优先获取发布信息,"Provide EN variants if sending EN; vendor to confirm final length"
+Copy Deliverables,Subject Lines (A/B),A2: 四款重磅新品预告：跑步机/走步机/椭圆机/动感单车（社群独家更新),Optional"
+Copy Deliverables,Subject Lines (A/B),A3: 更安全、更聪明的居家训练体验｜来社群一起解锁,Optional"
+Copy Deliverables,Preheader Options,P1: CES现场动态、新品发布时间、训练建议与福利活动，社群优先同步。,"Provide EN variants if sending EN"
+Copy Deliverables,Preheader Options,P2: 加入社群，第一时间获取两款新品的预发布信息与训练内容更新。,"Optional"
+Copy Deliverables,Body Copy Source,Customer/EDM/BF/ces.md,"Vendor should implement this structure; adjust microcopy for layout"
+
+Design Requirements,Email Type,HTML email (responsive),Must render well in Gmail/Outlook/iOS/Android
+Design Requirements,Width,600px desktop with mobile-friendly stacking,"Common standard"
+Design Requirements,Typography,Use web-safe fonts,"No external font dependencies unless allowed"
+Design Requirements,CTA Button,High-contrast primary color,"Minimum 44px height on mobile; clear padding"
+Design Requirements,Image Ratio,Hero 1200x600 (recommended) or similar,"Optimize for retina; export @2x where needed"
+Design Requirements,Alt Text,Required for all images,"Meaningful and concise"
+Design Requirements,Dark Mode,Ensure acceptable contrast in dark mode,"Avoid pure black text on transparent backgrounds; test"
+
+Assets Needed,Logo,Merach logo (SVG/PNG),Client to provide
+Assets Needed,Hero Image,CES/new product teaser visual,"If none: vendor to design simple hero with typography"
+Assets Needed,Product Visuals,Optional product images for all 4 products,"If not available: use abstract/feature icons per product"
+Assets Needed,Brand Colors/Guidelines,Optional,"If not provided: vendor to follow current Merach site style"
+
+Links & Tracking,Link Policy,Only one outbound URL for CTAs,"All CTA instances must point to the same FB group URL"
+Links & Tracking,UTM Parameters,TBD,"Facebook group URLs may not need UTM; confirm with client; if used, keep consistent"
+Links & Tracking,Click Tracking,Enabled via ESP,"Vendor to confirm tracking toggles"
+
+Compliance,Unsubscribe,Must be present and functional,"Use ESP default"
+Compliance,Privacy Policy,Include link per template,"Use ESP default"
+Compliance,Claims Guidance,Avoid medical claims,"Say 'reduce impact/feel more comfortable' vs 'prevent injuries' if needed"
+
+Deliverables,HTML Email,1 responsive HTML file,"Or built directly in ESP; confirm workflow"
+Deliverables,Plain Text Version,1 text version,"Required for deliverability"
+Deliverables,Image Package,All images + source files,"Organized by module; include alt text list"
+Deliverables,QA Screenshots,Major clients screenshots,"At least: Gmail web, Outlook, iPhone Mail, Android Gmail"
+Deliverables,Test Send,Yes,"Vendor to send test to client list"
+
+Timeline,Brief Confirmation,TBD,"Client to confirm"
+Timeline,First Draft (design+HTML),TBD,"Vendor to propose"
+Timeline,Revisions,TBD,"Assume 1–2 rounds"
+Timeline,Final Delivery,TBD,"Must be before send time"
+
+Acceptance Checklist,Mobile Readability,Pass,"No horizontal scroll; CTA visible; text >= 14px mobile"
+Acceptance Checklist,Link Validation,Pass,"All CTA links point to FB group URL; no broken links"
+Acceptance Checklist,Proofreading,Pass,"No typos; consistent naming (Merach/MERACH)"
+Acceptance Checklist,Rendering,Pass,"No layout breaks in major clients"
+

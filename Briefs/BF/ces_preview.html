@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="supported-color-schemes" content="light dark" />
+    <title>Merach CES EDM Preview</title>
+    <style>
+      :root{
+        --bg: #f3f5f7;
+        --card: #ffffff;
+        --text: #0f172a;
+        --muted: #475569;
+        --line: #e2e8f0;
+        --brand: #111827;
+        --cta: #111827;
+        --ctaText: #ffffff;
+        --chip: #f1f5f9;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root{
+          --bg: #0b1220;
+          --card: #0f172a;
+          --text: #e5e7eb;
+          --muted: #9ca3af;
+          --line: #243244;
+          --brand: #e5e7eb;
+          --cta: #e5e7eb;
+          --ctaText: #0b1220;
+          --chip: #111c33;
+        }
+      }
+
+      body{
+        margin:0;
+        background: var(--bg);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+          Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+        color: var(--text);
+      }
+
+      /* Preview wrapper (not part of email) */
+      .preview-bar{
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 16px 14px 8px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+      .preview-bar strong{ color: var(--text); }
+      .preview-bar a{ color: inherit; }
+
+      /* Email canvas */
+      .email-outer{
+        padding: 16px 10px 40px;
+      }
+      .email{
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 12px 30px rgba(0,0,0,.06);
+      }
+
+      .topline{
+        padding: 10px 18px;
+        border-bottom: 1px solid var(--line);
+        font-size: 12px;
+        color: var(--muted);
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap: 12px;
+      }
+      .topline a{ color: var(--muted); text-decoration: underline; }
+
+      .brand{
+        padding: 16px 18px 0;
+        font-weight: 700;
+        letter-spacing: .06em;
+        color: var(--brand);
+        font-size: 12px;
+      }
+
+      .hero{
+        padding: 14px 18px 16px;
+      }
+      h1{
+        margin: 8px 0 6px;
+        font-size: 26px;
+        line-height: 1.22;
+        letter-spacing: -0.02em;
+      }
+      .subhead{
+        margin: 0 0 12px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+      .proof{
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      .hero-img{
+        margin-top: 14px;
+        height: 220px;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background:
+          radial-gradient(1200px 280px at 20% 0%, rgba(99,102,241,.18), transparent 55%),
+          radial-gradient(800px 260px at 85% 10%, rgba(16,185,129,.16), transparent 50%),
+          linear-gradient(135deg, rgba(148,163,184,.25), rgba(148,163,184,.05));
+        display:flex;
+        align-items:flex-end;
+        padding: 14px;
+        box-sizing: border-box;
+      }
+      .hero-img .tag{
+        display:inline-flex;
+        gap: 8px;
+        align-items:center;
+        background: var(--chip);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 6px 10px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .section{
+        padding: 18px;
+        border-top: 1px solid var(--line);
+      }
+      .kicker{
+        margin: 0 0 10px;
+        font-size: 12px;
+        color: var(--muted);
+        letter-spacing: .08em;
+        text-transform: uppercase;
+      }
+      .p{
+        margin: 0 0 12px;
+        font-size: 14px;
+        line-height: 1.65;
+        color: var(--text);
+      }
+      ul{
+        margin: 0;
+        padding-left: 18px;
+        color: var(--text);
+      }
+      li{
+        margin: 8px 0;
+        font-size: 14px;
+        line-height: 1.55;
+      }
+      li span{
+        color: var(--muted);
+      }
+
+      /* (Teasers) product grid styles removed—teasers now use vertical frames below */
+
+      .cta{
+        padding: 18px;
+        border-top: 1px solid var(--line);
+        text-align: center;
+      }
+      .btn{
+        display: inline-block;
+        background: var(--cta);
+        color: var(--ctaText);
+        text-decoration: none;
+        padding: 12px 18px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1;
+        border: 1px solid rgba(0,0,0,.08);
+      }
+      .cta .sub{
+        margin: 10px 0 0;
+        font-size: 12px;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+      .cta .sub a{
+        color: inherit;
+        text-decoration: underline;
+      }
+
+      .footer{
+        padding: 14px 18px 18px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.6;
+      }
+      .footer a{ color: inherit; text-decoration: underline; }
+
+      /* Mobile */
+      @media (max-width: 640px){
+        .email-outer{ padding: 10px 8px 28px; }
+        .email{ border-radius: 14px; }
+        h1{ font-size: 22px; }
+        .hero-img{ height: 180px; }
+        .teaser-grid{ grid-template-columns: 1fr; }
+      }
+
+      /* Hidden preheader like real emails */
+      .preheader{
+        display:none !important;
+        visibility:hidden;
+        opacity:0;
+        color:transparent;
+        height:0;
+        width:0;
+        overflow:hidden;
+      }
+
+      /* Teasers (2x2 grid) */
+      .teaser-grid{
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .teaser-item{
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 12px;
+        background: rgba(148,163,184,.06);
+      }
+      .teaser-img{
+        height: 140px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        background:
+          radial-gradient(800px 200px at 25% 0%, rgba(99,102,241,.14), transparent 60%),
+          linear-gradient(135deg, rgba(148,163,184,.22), rgba(148,163,184,.06));
+        display:flex;
+        align-items:flex-end;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .teaser-card{
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 12px 12px 10px;
+        background: rgba(148,163,184,.08);
+      }
+      .teaser-card h3{
+        margin: 0 0 8px;
+        font-size: 14px;
+        line-height: 1.3;
+      }
+    </style>
+  </head>
+  <body>
+      <div class="preview-bar">
+      <div><strong>Email preview (web mock)</strong>: This is not the final ESP rendering, but it’s useful for aligning structure and visual hierarchy.</div>
+      <div>Primary destination (single CTA): <a href="https://www.facebook.com/groups/merachfitness" target="_blank" rel="noopener">https://www.facebook.com/groups/merachfitness</a></div>
+    </div>
+
+    <div class="email-outer">
+      <div class="email" role="article" aria-label="Merach CES EDM Preview">
+        <div class="preheader">CES updates, launch timing, training tips, and perks—shared with the community first.</div>
+
+        <div class="topline">
+          <div>Merach CES Pre-Launch</div>
+          <div><a href="#" onclick="window.print(); return false;">Print / Save as PDF</a></div>
+        </div>
+
+        <div class="brand">MERACH</div>
+
+        <div class="hero">
+          <h1>Merach returns to CES: first look at 4 pre-launch products</h1>
+          <p class="subhead">Pro-level joint-friendly design + conversational AI coaching (community-first updates)</p>
+          <p class="proof">As a home fitness innovator, Merach serves <strong>10,000,000+</strong> households worldwide.</p>
+          <div class="hero-img" aria-label="Hero image placeholder">
+            <div class="tag">[HeroImage placeholder] <span>CES / New Products Teaser</span></div>
+          </div>
+        </div>
+
+        <div class="section">
+          <p class="kicker">Why now</p>
+          <p class="p">
+            Looking for a more stable, safer, more “supported” home training experience?<br />
+            This year we’re returning to CES in Las Vegas with 4 new pre-launch products—and we’ll share the latest progress in the community first.
+          </p>
+        </div>
+
+        <div class="section">
+          <p class="kicker">What you get</p>
+          <ul>
+            <li><strong>Safer feel</strong>: <span>Pro-level joint-friendly design to reduce impact and discomfort from jolting steps.</span></li>
+            <li><strong>Smarter coaching</strong>: <span>Conversational AI coaching for more guided, feedback-driven workouts.</span></li>
+            <li><strong>Premium, more accessible</strong>: <span>A high-end experience at a more affordable price point.</span></li>
+            <li><strong>Built to a higher bar</strong>: <span>Engineered to treadmill-level standards for stability and durability.</span></li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <p class="kicker">New product teasers</p>
+          <div class="teaser-grid" aria-label="New product teasers (2x2 grid)">
+            <div class="teaser-item" aria-label="Product 1">
+              <div class="teaser-img">[Product image placeholder]</div>
+              <div class="teaser-card">
+                <h3>Merach UltraTread T60 Aura (pre-launch)</h3>
+                <ul>
+                  <li><strong>KneeGuard™</strong>: joint-friendly running feel</li>
+                  <li><strong>AI Coach</strong>: conversational voice coaching</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="teaser-item" aria-label="Product 2">
+              <div class="teaser-img">[Product image placeholder]</div>
+              <div class="teaser-card">
+                <h3>Merach UltraWalk W60 Plus (pre-launch)</h3>
+                <ul>
+                  <li><strong>Walking pad upgrade</strong>: more stable, more durable</li>
+                  <li><strong>More engaging vibe</strong>: sound-reactive lights + speaker (if available)</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="teaser-item" aria-label="Product 3">
+              <div class="teaser-img">[Product image placeholder]</div>
+              <div class="teaser-card">
+                <h3>Merach UltraElliptical E60 (pre-launch)</h3>
+                <ul>
+                  <li><strong>Adjustable stride</strong>: 42–50 cm</li>
+                  <li><strong>Stable &amp; smooth</strong>: more confident home workouts</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="teaser-item" aria-label="Product 4">
+              <div class="teaser-img">[Product image placeholder]</div>
+              <div class="teaser-card">
+                <h3>Merach NovaBike S50 (pre-launch)</h3>
+                <ul>
+                  <li><strong>Large-screen interaction</strong>: 21.5" Full HD</li>
+                  <li><strong>Immersive ride</strong>: 360º Movement (if available)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <p class="p" style="margin-top:12px; color: var(--muted); font-size: 13px;">
+            More details (timeline, feature highlights, price range, etc.) will be shared with the community <strong>first</strong>.
+          </p>
+        </div>
+
+        <div class="section">
+          <p class="kicker">Why join the community</p>
+          <ul>
+            <li><strong>First-to-know updates</strong>: <span>CES highlights, launch timing, and availability</span></li>
+            <li><strong>Training + accountability</strong>: <span>tips, content, Q&amp;A, and a supportive vibe</span></li>
+            <li><strong>Perks</strong>: <span>giveaways/discounts/beta opportunities (if applicable) announced inside</span></li>
+            <li><strong>Real user conversations</strong>: <span>more real-life use cases and feedback</span></li>
+          </ul>
+        </div>
+
+        <div class="cta">
+          <a class="btn" href="https://www.facebook.com/groups/merachfitness" target="_blank" rel="noopener">
+            Join the Merach Fitness Facebook Group
+          </a>
+          <div class="sub">
+            Or click: <a href="https://www.facebook.com/groups/merachfitness" target="_blank" rel="noopener">See what the community is sharing</a> /
+            <a href="https://www.facebook.com/groups/merachfitness" target="_blank" rel="noopener">Send me launch updates</a>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div><strong>Merach</strong> — Home Fitness Innovation</div>
+          <div>Company info / Address (to be filled by your ESP template)</div>
+          <div style="margin-top:8px;">
+            <a href="#">Unsubscribe</a> · <a href="#">Privacy Policy</a>
+          </div>
+          <div style="margin-top:10px;">
+            Note: The Facebook group page may require login; you can leave anytime.
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
