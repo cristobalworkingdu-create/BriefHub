@@ -3,7 +3,7 @@
     "title": "CES 2026 — New Product Teasers EDM (FB Group Drive)",
     "category": "EDM",
     "format": "html",
-    "path": "../Briefs/BF/ces_preview.html",
+    "path": "./Briefs/BF/ces_preview.html",
     "date": "2025-12-29",
     "description": "Web preview of the CES pre-launch EDM (English), with 4 product teaser frames and a single CTA to the Facebook group.",
     "tags": ["CES", "EDM", "Facebook Group", "Preview", "EN"]
@@ -12,7 +12,7 @@
     "title": "CES 2026 — EDM Copy & Structure (Source)",
     "category": "EDM",
     "format": "md",
-    "path": "../Briefs/BF/ces.md",
+    "path": "./Briefs/BF/ces.md",
     "date": "2025-12-29",
     "description": "Source copy and module structure for the CES pre-launch EDM (English).",
     "tags": ["CES", "EDM", "Copy", "EN"]
@@ -21,7 +21,7 @@
     "title": "CES 2026 — EDM Production Brief (Vendor CSV)",
     "category": "EDM",
     "format": "csv",
-    "path": "../Briefs/BF/ces_brief.csv",
+    "path": "./Briefs/BF/ces_brief.csv",
     "date": "2025-12-29",
     "description": "Execution brief for EDM vendor: structure, assets, tracking, deliverables, acceptance checklist.",
     "tags": ["CES", "EDM", "Brief", "Vendor", "CSV"]
@@ -30,7 +30,7 @@
     "title": "BFCM — Marketing Campaign Brief (CSV)",
     "category": "Campaign",
     "format": "csv",
-    "path": "../Campagin/BFCM/BFCM%20Campaign%20Brief.csv",
+    "path": "./Campagin/BFCM/BFCM%20Campaign%20Brief.csv",
     "date": "",
     "description": "Historical BFCM campaign brief (CSV).",
     "tags": ["BFCM", "Campaign", "CSV"]
@@ -39,7 +39,7 @@
     "title": "PR — Pitch Brief (MD)",
     "category": "PR",
     "format": "md",
-    "path": "../PR/PR%20Pitch%20Brief.md",
+    "path": "./PR/PR%20Pitch%20Brief.md",
     "date": "",
     "description": "PR pitching brief (markdown).",
     "tags": ["PR", "Brief", "MD"]
@@ -48,7 +48,7 @@
     "title": "11111",
     "category": "EDM",
     "format": "html",
-    "path": "../Briefs/BF/ces_preview.html",
+    "path": "./Briefs/BF/ces_preview.html",
     "date": "2025-12-29",
     "description": "Web preview of the CES pre-launch EDM (English), with 4 product teaser frames and a single CTA to the Facebook group.",
     "tags": ["CES", "EDM", "Facebook Group", "Preview", "EN"]
