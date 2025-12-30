@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="supported-color-schemes" content="light dark" />
+    <title>Cristobal — Brief Hub</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="wrap">
+        <div class="brand">
+          <div class="logo">CRISTOBAL</div>
+          <div class="meta">
+            <h1>Brief Hub</h1>
+            <p>External-facing collection of briefs, previews, and supporting docs.</p>
+          </div>
+        </div>
+
+        <div class="controls" aria-label="Search and filters">
+          <label class="field">
+            <span class="label">Search</span>
+            <input id="q" type="search" placeholder="Search title, tags, format…" autocomplete="off" />
+          </label>
+
+          <label class="field">
+            <span class="label">Category</span>
+            <select id="cat">
+              <option value="">All</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span class="label">Format</span>
+            <select id="fmt">
+              <option value="">All</option>
+              <option value="html">HTML</option>
+              <option value="md">MD</option>
+              <option value="csv">CSV</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="section">
+        <div class="section-head">
+          <h2>All briefs</h2>
+          <div class="hint" id="count"></div>
+        </div>
+        <div id="grid" class="grid" aria-live="polite"></div>
+      </section>
+
+      <section class="section">
+        <h2>How to add a new brief</h2>
+        <ol class="steps">
+          <li>Put the brief file(s) in the repo (HTML/MD/CSV, images, etc.).</li>
+          <li>Open <code>Branding/BFIndex/briefs.json</code> and add a new item.</li>
+          <li>Commit &amp; push to GitHub. Your links will work once GitHub Pages is updated.</li>
+        </ol>
+        <p class="small">
+          Tip: For HTML previews, keep them <strong>self-contained</strong> (inline CSS) so external viewers can open them without build steps.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <div class="small">
+          Generated as a static page. Safe to host on GitHub Pages.
+        </div>
+      </div>
+    </footer>
+
+    <template id="card">
+      <article class="card">
+        <div class="card-top">
+          <div class="badge" data-badge></div>
+          <div class="small" data-date></div>
+        </div>
+        <h3 data-title></h3>
+        <p class="desc" data-desc></p>
+        <div class="tags" data-tags></div>
+        <div class="actions">
+          <a class="btn" data-open target="_blank" rel="noopener">Open</a>
+          <button class="btn secondary" data-copy type="button">Copy link</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
